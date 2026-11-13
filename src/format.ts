@@ -33,6 +33,7 @@ export function shortDate(iso: string) {
   const d = new Date(iso.length === 10 ? iso + "T12:00:00" : iso);
   return `${MONTHS[d.getMonth()]} ${d.getDate()}`;
 }
+/** "7:00 AM" (no trailing period, so it can end a sentence). */
 export function timeOf(iso: string) {
-  return new Date(iso).toLocaleTimeString(L, { hour: "numeric", minute: "2-digit" });
+  return new Date(iso).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
 }

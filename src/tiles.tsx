@@ -31,8 +31,10 @@ function Hero({ value, format, label, sub }: { value: number; format: (v: number
 function MoreLink({ what, children = "More info" }: { what: string; children?: ReactNode }) {
   return (
     <span className="more more-demo" title={`In the production version, this opens ${what} in a new tab.`}>
-      {children}
-      <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden><path d="M4 2h6v6M10 2 3 9" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
+      <span className="more-l">
+        {children}
+        <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden><path d="M4 2h6v6M10 2 3 9" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
+      </span>
       <small>opens {what} in production</small>
     </span>
   );
